@@ -2,13 +2,12 @@
 
 /**
  * _puts - prints a string, followed by a new line
- * @args: the string
+ * @str: the string
  *
  * Return: number of characters printed
  */
-int _puts(va_list args)
+int _puts(char *str)
 {
-	char *str = va_arg(args, char *);
 	int count = 0;
 
 	while (*str)
