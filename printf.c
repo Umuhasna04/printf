@@ -30,6 +30,8 @@ int _printf(const char *format, ...)
 					count += _putint(va_arg(args, int));
 				else if (format[i] == 'b')
 					count += _putbin(va_arg(args, unsigned int));
+				else if (format[i] == 'S')
+					count += _putstr(va_arg(args, char *));
 				else if (format[i] == '%')
 					count += _putchar('%');
 				else if (format[i] == '\0')
@@ -41,10 +43,8 @@ int _printf(const char *format, ...)
 					count += _putchar(format[i]); }
 			}
 			else
-				count += _putchar(format[i]);
-		}
-		va_end(args);
-	}
+				count += _putchar(format[i]); }
+		va_end(args); }
 	else
 		return (-1);
 	return (count);
