@@ -9,5 +9,6 @@ int _putchar(char c);
 int _puts(char *);
 int _putint(long int num);
 int _putbin(unsigned int num);
+int _putstr(char *str);
 
 #endif
