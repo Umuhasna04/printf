@@ -6,7 +6,7 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int _puts(va_list args);
-
+int _puts(char *);
+int _putint(int num);
 
 #endif
