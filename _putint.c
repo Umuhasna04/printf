@@ -6,7 +6,7 @@
  *
  * Return: number of characters printed
  */
-int _putint(int num)
+int _putint(long int num)
 {
 	int count;
 
