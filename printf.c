@@ -8,7 +8,8 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list args, args_copy;
+	char *str;
+	va_list args;
 	int i, count = 0;
 
 	if (format)
@@ -23,9 +24,11 @@ int _printf(const char *format, ...)
 					count += _putchar(va_arg(args, int));
 				else if (format[i] == 's')
 				{
-					va_copy(args_copy, args);
-					count += _puts(args_copy);
+					str = va_arg(args, char *);
+					count += _puts(str);
 				}
+				else if (format[i] == 'd' || format[i] == 'i')
+					count += _putint(va_arg(args, int));
 				else if (format[i] == '%')
 					count += _putchar('%');
 				else
@@ -39,7 +42,6 @@ int _printf(const char *format, ...)
 				count += _putchar(format[i]);
 		}
 		va_end(args);
-		va_end(args_copy);
 	}
 
 	return (count);
