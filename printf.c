@@ -37,7 +37,6 @@ int _printf(const char *format, ...)
 				else
 				{
 					count += _putchar(format[i - 1]);
-
 					count += _putchar(format[i]);
 				}
 			}
@@ -46,6 +45,7 @@ int _printf(const char *format, ...)
 		}
 		va_end(args);
 	}
-
+	else
+		return (-1);
 	return (count);
 }
