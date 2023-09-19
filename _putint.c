@@ -13,8 +13,7 @@ int _putint(int num)
 	if (num < 0)
 	{
 		_putchar('-');
-		count = 1;
-		num = -num;
+		return (1 + _putint(-num));
 	}
 
 	if (num / 10 == 0)
@@ -26,5 +25,5 @@ int _putint(int num)
 	count = _putint(num / 10);
 	_putchar(num % 10 + '0');
 
-	return (count);
+	return (count + 1);
 }
